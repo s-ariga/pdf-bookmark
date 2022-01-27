@@ -632,7 +632,7 @@ def main():
         return 1
 
     if args.bookmark is not None:
-        with open(args.bookmark) as f:
+        with open(args.bookmark,'r',encoding='utf-8') as f:
             bookmarks = import_bmk(f.read(), args.collapse_level)
     else:
         pdftk_data = call(['pdftk', args.pdf, 'dump_data'], 'ascii')
